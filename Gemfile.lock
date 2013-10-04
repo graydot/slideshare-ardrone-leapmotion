@@ -48,6 +48,7 @@ GEM
     websocket-driver (0.3.0)
     websocket_parser (0.1.4)
       http
+    xml-simple (1.1.2)
 
 PLATFORMS
   ruby
@@ -56,3 +57,4 @@ DEPENDENCIES
   artoo
   artoo-ardrone
   artoo-leapmotion
+  xml-simple
