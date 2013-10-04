@@ -4,4 +4,4 @@ About this repo
 Slideshare October Hackday was fun. This repo contains the code for the hack which involves
 1. Controlling a drone using a leapmotion device
 2. Obtaining the video feed, extracting frames and uploading the slideshow (made with those images) to Slideshare
-3. Slideshare uses Cruisecontrol. And part o
+3. Slideshare uses Cruisecontrol. This part of the hack involved getting the drone to fetch the build status from ccrb, and hovering with flashing lights when the build failed.
