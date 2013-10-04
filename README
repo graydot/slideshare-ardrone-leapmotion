@@ -5,3 +5,44 @@ Slideshare October Hackday was fun. This repo contains the code for the hack whi
 1. Controlling a drone using a leapmotion device
 2. Obtaining the video feed, extracting frames and uploading the slideshow (made with those images) to Slideshare
 3. Slideshare uses Cruisecontrol. This part of the hack involved getting the drone to fetch the build status from ccrb, and hovering with flashing lights when the build failed.
+
+Introduction Slideshow is at http://www.slideshare.net/jsemmanuel/slideshare-hackday-drone-leapmotion-description
+
+Requirements
+============
+RVM
+bundler
+
+Configuration
+=============
+You need to create two files
+slideshare_credentials.yml with keys [api_key, shared_secret, username, password] with your slideshare credentials
+build_credentials.yml with keys [url, username, password] with your ccrb config. Assuming it is over ssl and protected by basic auth
+
+How to Execute
+===========
+You need an active internet connection and a wifi connection you can connect to the drone on. I used a data card, but you could use an ethernet connection if your laptop has only one wifi adapter. You should be able to ping 'google.com' and '192.168.1.1' simultaneously
+
+* Note: Make sure the non ardrone wifi network is not 192.168.1.x as the ardrone uses that network and the ip of the drone is 192.168.1.1. You can find instructions for changing the ip address <here>
+
+Once you are able to ping both these hosts, your network is setup right. 
+
+Code Red Drone aka ccrb mode
+=========
+To run the drone in ccrb mode, 
+bundle exec ./ccrb.rb
+
+This should check the url you provided in the build_credentials file (it expects an rss feed with a particular structure) and turn the drone on if the build has failed.
+
+Unruly Drone aka Leapmotion Control
+===================================
+Connect your leapmotion device (ensure drivers are installed) 
+bundle exec ./robots.rb
+
+The drone requires both of your hands to be over the leapmotion device. The right hand can gesture front/back and up/down. The left hand when moved sideways triggers turn right and left commands. Moving the left hand downwards locks the drone into the current position. Moving it upwards unlocks it. This was a way of getting around the fact that moving your right hand upwards and bringing it down to move it upwards again triggered an up, down, up sequence. Now you moving your right hand up, move your left hand down, move your right hand down, move your left hand up, move your right hand up again. Dont worry, it isn't as tricky as it looks. Just watch the demo video at: <video link>
+
+Shutter Drone aka Slideshow mode
+===============================
+
+bundle exec ./video.rb
+turns on the mode in which images are extracted from the drone's video stream, combined into a pdf file and uploaded to slideshare. The script also opens a browser with the slideshow opened once the upload has converted. And example url is http://www.slideshare.net/jsemmanuel/ardrone-slideshow-upload-slideshare-hackday-26860280
