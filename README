@@ -39,7 +39,7 @@ Unruly Drone aka Leapmotion Control
 Connect your leapmotion device (ensure drivers are installed) 
 bundle exec ./robots.rb
 
-The drone requires both of your hands to be over the leapmotion device. The right hand can gesture front/back and up/down. The left hand when moved sideways triggers turn right and left commands. Moving the left hand downwards locks the drone into the current position. Moving it upwards unlocks it. This was a way of getting around the fact that moving your right hand upwards and bringing it down to move it upwards again triggered an up, down, up sequence. Now you moving your right hand up, move your left hand down, move your right hand down, move your left hand up, move your right hand up again. Dont worry, it isn't as tricky as it looks. Just watch the demo video at: <video link>
+The drone requires both of your hands to be over the leapmotion device. The right hand can gesture front/back and up/down. The left hand when moved sideways triggers turn right and left commands. Moving the left hand downwards locks the drone into the current position. Moving it upwards unlocks it. This was a way of getting around the fact that moving your right hand upwards and bringing it down to move it upwards again triggered an up, down, up sequence. Now you moving your right hand up, move your left hand down, move your right hand down, move your left hand up, move your right hand up again. Dont worry, it isn't as tricky as it looks. Just watch the demo video at: http://www.youtube.com/watch?v=_8ICVH4vSHA
 
 Shutter Drone aka Slideshow mode
 ===============================
